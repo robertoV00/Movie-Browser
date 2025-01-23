@@ -44,6 +44,7 @@ span {
     justify-content: space-between;
     flex-direction: row;
     position: absolute;
+    z-index: 99;
 }
 
 .movie-background-wrapper {
@@ -178,7 +179,7 @@ span {
 }
 
 .movie-box:hover {
-    
+
 }
 
 .movie-name-wrapper {
