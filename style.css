@@ -80,18 +80,27 @@ span {
 
 .nav-link {
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 200;
+    transition: 500ms ease;
 }
 
 .nav-link:hover {
-    color: red;
-    text-decoration: underline;
+    color: rgb(255, 39, 39);
+    border-bottom: 1px solid red;
 }
 
 .right-side {
     display: flex;
     align-items: center;
     gap: 36px;
+}
+
+.search-icon-wrapper {
+    cursor: pointer;
+}
+
+.settings-icon-wrapper {
+    cursor: not-allowed;
 }
 
 .icon {
@@ -139,7 +148,14 @@ span {
     background-color: transparent;
     height: 100%;
     outline: none;
+    transition: 300ms ease;
 }
+
+.search-bar:focus {
+    transform: scale(1.03);
+    box-shadow: 0 0 10px red;
+}
+
 
 .magnifying-glass {
     position: relative;
