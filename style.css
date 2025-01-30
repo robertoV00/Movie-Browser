@@ -65,7 +65,9 @@ span {
     color: white;
 }
 
-
+.icon-search-bar {
+    font-size: 28px;
+}
 /* .clock {
     position: relative;
     top: 10px;
@@ -138,10 +140,16 @@ span {
 }
 
 .movie-background-text {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
     position: absolute;
     top: 130px;
     left: 50%;
     transform: translateX(-50%);
+    width: 100%;
+    transition: 200ms ease;
 }
 
 .background-title {
@@ -149,10 +157,13 @@ span {
     font-size: 60px;
     font-weight: 300;
     margin-bottom: 10px;
+    transition: 200ms ease;
 }
 
 .background-subtitle {
     font-weight: 300;
+    margin-bottom: 50px;
+    width: 100%;
 }
 
 .title-plus {
@@ -162,7 +173,7 @@ span {
 .search-bar-wrapper {
     position: absolute;
     height: 80px;
-    top: 150px;
+    top: 170px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -190,6 +201,10 @@ span {
 .magnifying-glass {
     position: relative;
     right: 50px;
+}
+
+.magnifying-glass:hover {
+    cursor: pointer;
 }
 
 /* TOP HALF */
@@ -292,7 +307,36 @@ span {
 
 /* UPPER HALF RESPONSIVENESS */
 @media (max-width: 640px) {
+    .navbar {
+        margin-top: 40px;
+    }
+
+    .movie-logo-wrapper {
+        display: none;
+    }
     
+    .search-icon-wrapper {
+        display: none;
+    }
+
+    /* .movie-logo {
+        display: none;
+    } */
+}
+
+@media (max-width: 550px) {
+    .movie-background-text {
+        font-size: 12px;
+    }
+
+    .search-bar {
+        height: 85%;
+        width: 250px;
+    }
+
+    .background-title {
+        font-size: 48px;
+    }
 }
 /* UPPER HALF RESPONSIVENESS */
 
@@ -315,6 +359,10 @@ span {
     .movie-box {
         width: 200px;
     }
+}
+
+@media (max-width: 550px) {
+    
 }
 
 @media (max-width: 533px) {
