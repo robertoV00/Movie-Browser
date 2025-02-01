@@ -206,9 +206,9 @@ async function renderMovies() {
             </div>`
     }).join("");
     
+    // allMovies = [...guardians, ...avengers, ...spiderman, ...minions, ...nope].slice(0, 6);
     moviesList.innerHTML = moviesHTML
 
-    // allMovies = [...guardians, ...avengers, ...spiderman, ...minions, ...nope].slice(0, 6);
     
 }
 
