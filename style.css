@@ -214,11 +214,16 @@ span {
     background-color: rgb(29, 29, 29);
 }
 
+.movie {
+    display: block;
+}
+
 .movies-row {
     display: flex;
     flex-direction: column;
     /* padding: 20px 60px; */
 }
+
 
 .bottom-header {
     font-weight: 200;
@@ -303,6 +308,35 @@ span {
     top: -110px;
 }
 
+.movies-list-spinner {
+    font-size: 64px;
+    color: crimson;
+    display: none !important;
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: loading-spinner 1000ms infinite;
+}
+
+.spinner-visible {
+    display: block !important;
+}
+
+.movie-invisible {
+    visibility: hidden;
+}
+
+
+@keyframes loading-spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
 /* BOTTOM HALF */
 
 /* UPPER HALF RESPONSIVENESS */

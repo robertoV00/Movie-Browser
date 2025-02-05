@@ -34,7 +34,7 @@
                 <h2 class="background-subtitle">With over <span>3000</span> movies on Ticket<span class="subtitle-plus">+</span>, the possibilites are endless!</h2>
                 <div class="search-bar-wrapper">
                     <input placeholder="Find a movie" class="search-bar" type="text">
-                    <i class="fa-solid fa-magnifying-glass icon-search-bar magnifying-glass" onclick="searchIcon ()"></i>
+                    <i class="fa-solid fa-magnifying-glass icon-search-bar magnifying-glass"></i>
                 </div>
             </div>
         </figure>
@@ -46,7 +46,8 @@
                 <div class="movies-top">
                     <h2 class="bottom-header">Search results for:</h2>
                 </div>
-                <div class="movie-selection-wrapper">
+                <div class="movie-selection-wrapper" id="movies-list">
+                    <i class="fa-solid fa-spinner movies-list-spinner"></i>
                     <div class="movie-box">
                         <figure class="movie-image-wrapper">
                             <img class="movie-image" src="/assets/guadiansGalaxy.jpg" alt="">
