@@ -5,12 +5,46 @@ const spinner = document.querySelector('.movies-list-spinner');
 
 let allMovies = [];
 
+//nav-input
+//nav-glass
+const navbarInput = document.querySelector('.nav-input');
+const navbarGlass = document.querySelector('.nav-glass');
+
+navbarGlass.addEventListener('click', (event) => {
+    navbarInput.focus();
+    navbarInput.style.border = '1px solid white';
+    navbarInput.style.width = '200px'
+    navbarGlass.style.transition = 'transform 500ms ease';
+    navbarGlass.style.transform = 'translateX(-157px)';
+
+});
+
+navbarInput.addEventListener('keypress', (event) => {
+    if (event.key === "Enter") {
+        const moviesList = document.querySelector('.movie-selection-wrapper');    
+        const movieTitle = document.querySelector('.movie-title-display')
+
+        movieTitle.innerHTML = `"${searchInput.value}"`;
+        moviesList.innerHTML = `<i class="fa-solid fa-spinner movies-list-spinner spinner-visible"></i>`;
+        setTimeout(() => {
+            renderMovies();
+        }, 1500)
+    }
+});
+
+navbarInput.addEventListener('blur', () => {
+    navbarInput.style.width = '0';
+    navbarInput.style.border = 'none';
+    navbarGlass.style.transform = 'translateX(0)';
+});
+
 
 searchIcon.addEventListener('click', (event) => {
-    movieTool.forEach(movieTool => {
-        movieTool.classList.add('movie-invisible'); // ✅ No dot in class name
-    });
-    spinner.classList.add('spinner-visible')
+    const moviesList = document.querySelector('.movie-selection-wrapper');
+    const movieTitle = document.querySelector('.movie-title-display')
+
+    movieTitle.innerHTML = `"${searchInput.value}"`;
+    moviesList.innerHTML = `<i class="fa-solid fa-spinner movies-list-spinner spinner-visible"></i>`;
     setTimeout(() => {
         renderMovies();
     }, 1500)
@@ -20,9 +54,14 @@ searchIcon.addEventListener('click', (event) => {
 
 searchInput.addEventListener('keypress', (event) => {
     if (event.key === "Enter") {
+        const moviesList = document.querySelector('.movie-selection-wrapper');    
+        const movieTitle = document.querySelector('.movie-title-display')
+
+        movieTitle.innerHTML = `"${searchInput.value}"`;
+        moviesList.innerHTML = `<i class="fa-solid fa-spinner movies-list-spinner spinner-visible"></i>`;
         setTimeout(() => {
             renderMovies();
-        }, 1000);
+        }, 1500)
     }
 });
 
@@ -36,14 +75,6 @@ async function fetchMovies(query) {
 }
 
 async function renderMovies() {
-    // const guardians = await fetchMovies("guardians");
-    // const avengers = await fetchMovies("avengers");
-    // const spiderman = await fetchMovies("spiderman");
-    // const minions = await fetchMovies("minions");
-    // const nope = await fetchMovies("nope");
-    // allMovies = [...guardians, ...avengers, ...spiderman, ...minions, ...nope].slice(0, 6);
-
-    
     const movies = await fetchMovies(searchInput.value);
     const sixMovies = movies.slice(0, 6);
     const moviesList = document.querySelector('.movie-selection-wrapper');

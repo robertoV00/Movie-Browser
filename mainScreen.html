@@ -21,7 +21,8 @@
                 </div>
                 <div class="right-side">
                     <div class="search-icon-wrapper">
-                        <i class="fa-solid fa-magnifying-glass icon-navbar"></i>
+                        <input type="text" class="nav-input" placeholder="Find a movie">
+                        <i class="fa-solid fa-magnifying-glass nav-glass icon-navbar"></i>
                     </div>
                     <div class="settings-icon-wrapper">
                         <i class="fa-solid fa-gear icon-navbar"></i>
@@ -44,10 +45,9 @@
         <div class="container movies-container">
             <div class="row movies-row">
                 <div class="movies-top">
-                    <h2 class="bottom-header">Search results for:</h2>
+                    <h2 class="bottom-header">Search results for: <span class="movie-title-display"></span></h2>
                 </div>
                 <div class="movie-selection-wrapper" id="movies-list">
-                    <i class="fa-solid fa-spinner movies-list-spinner"></i>
                     <div class="movie-box">
                         <figure class="movie-image-wrapper">
                             <img class="movie-image" src="/assets/guadiansGalaxy.jpg" alt="">
