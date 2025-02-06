@@ -60,7 +60,7 @@ span {
     transition: width 500ms ease;
     cursor: default;
     position: relative;
-    left: 60px;
+    left:50px;
 }
 
 .nav-glass {

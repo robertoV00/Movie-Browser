@@ -10,14 +10,14 @@ let allMovies = [];
 const navbarInput = document.querySelector('.nav-input');
 const navbarGlass = document.querySelector('.nav-glass');
 
-navbarGlass.addEventListener('click', (event) => {
+function activateSearch() {
     navbarInput.focus();
     navbarInput.style.border = '1px solid white';
     navbarInput.style.width = '200px'
     navbarGlass.style.transition = 'transform 500ms ease';
-    navbarGlass.style.transform = 'translateX(-157px)';
+    navbarGlass.style.transform = 'translateX(-160px)';
 
-});
+};
 
 navbarInput.addEventListener('keypress', (event) => {
     if (event.key === "Enter") {
